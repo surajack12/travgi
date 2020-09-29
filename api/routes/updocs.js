@@ -2,8 +2,8 @@ var express = require('express');
 var Router = express();
 var multer = require('multer');
 var mysql = require('mysql')
-var bodyParse = require('body-parser');
-const { Router } = require('express');
+var bodyParser = require('body-parser');
+
 
 
 

@@ -19,7 +19,7 @@ class Kyc extends React.Component{
      const formData = new FormData();
      formData.append("aadhar",this.state.aadhar,this.state.aadhar.name);
      console.log(this.state.aadhar);
-     Axios.
+    // Axios.
      
  }
     render(){
