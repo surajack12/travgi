@@ -19,6 +19,7 @@ class Kyc extends React.Component{
      const formData = new FormData();
      formData.append("aadhar",this.state.aadhar,this.state.aadhar.name);
      console.log(this.state.aadhar);
+     Axios.
      
  }
     render(){
@@ -37,6 +38,7 @@ class Kyc extends React.Component{
               id="contained-button-file"
               multiple
               type="file"
+              name = "adrname"
               onChange={this.handleUpload}
             />
            
