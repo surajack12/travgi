@@ -1,7 +1,8 @@
 import React from 'react'
 import Axios from 'axios';
+import {Progress} from 'reactstrap';
 import {Container,Button} from '@material-ui/core'
-import {AddPhotoAlternateRounded,PermIdentityRounded,CardMembership,FingerprintRounded} from '@material-ui/icons'
+import {FingerprintRounded} from '@material-ui/icons'
 
 
 class Kyc extends React.Component{
@@ -9,46 +10,62 @@ class Kyc extends React.Component{
     {
         super()
         this.state={
-            aadhar:null
+            aadhar:null,
+            loaded:0
         }
     }
  handleUpload=event=>{
-     this.setState({aadhar:event.target.files[0]})
+     this.setState({
+         aadhar:event.target.files[0],
+         loaded:0
+        })
  }
  onformSubmit=()=>{
      const formData = new FormData();
-     formData.append("aadhar",this.state.aadhar,this.state.aadhar.name);
-     console.log(this.state.aadhar);
-    // Axios.
-     
- }
+     formData.append("aadhar",this.state.aadhar);
+  
+     Axios.post('/api/updocs/upaadhar',formData,
+        {
+            onUploadProgress: ProgressEvent => {
+                this.setState({
+                  loaded: (ProgressEvent.loaded / ProgressEvent.total*100),
+              })
+          },
+        }
+      ).then(res => { // then print response status
+        console.log(res)
+     })
+    }
+ 
     render(){
+        Axios.get('/api/').then(res=>alert(res))
         return(
             <>
            <Container style={{backgroundColor:'white'}}>
            <h2> Upload Documents</h2>
 
-           <form style={{marginTop:'2rem'}} >
+           <div style={{marginTop:'2rem'}} >
            <label htmlFor="contained-button-file">
                 <FingerprintRounded />Aadhar card
-            </label>
+            </label><br/>
            <input
-              accept="image/*"
-              style={{display:'none'}}
+              accept="image/*"              
               id="contained-button-file"
               multiple
               type="file"
-              name = "adrname"
+              name="aadhar"
               onChange={this.handleUpload}
             />
            
+            <br/>
+            <Progress max="100" color="success" value={this.state.loaded} >{Math.round(this.state.loaded,2) }%</Progress>
             <br/>
             <Button
              variant='contained'
              onClick={this.onformSubmit}
              
               >Submit</Button>
-           </form>
+           </div>
            </Container>
             </>
         )
