@@ -5,3 +5,10 @@ var conn =mysql.createConnection({
     password:'',
     database:'traji'
  });
+
+ conn.connect((err)=>{
+     if(err) console.log('Error in Database connection');
+     else console.log('Database connected');
+ })
+
+ module.exports= conn;

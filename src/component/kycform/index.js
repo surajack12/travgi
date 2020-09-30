@@ -24,7 +24,7 @@ class Kyc extends React.Component{
      const formData = new FormData();
      formData.append("aadhar",this.state.aadhar);
   
-     Axios.post('/api/updocs/upaadhar',formData,
+     Axios.post('http://localhost:8080/updocs/upaadhar',formData,
         {
             onUploadProgress: ProgressEvent => {
                 this.setState({
@@ -38,7 +38,7 @@ class Kyc extends React.Component{
     }
  
     render(){
-        Axios.get('/api/').then(res=>alert(res))
+        Axios.get('http://localhost:8080/updocs/').then(res=>console.log(res))
         return(
             <>
            <Container style={{backgroundColor:'white'}}>

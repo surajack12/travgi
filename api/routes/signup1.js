@@ -1,6 +1,7 @@
 var express = require('express');
+var mysql =require('mysql')
 var router = express.Router();
-var mysql = require('mysql');
+var conn = require('../mysqlconn');
 var bodyParser = require('body-parser')
 router.use(bodyParser.urlencoded({extended:false}));
 router.use(bodyParser.json());
@@ -11,17 +12,7 @@ router.use(bodyParser.json());
 //     database:'surajsahu'
 // });
 
-var conn =mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'',
-    database:'traji'
-});
 
-conn.connect((err)=>{
-    if (err) console.log('Problem in mysql connection');
-    else console.log('Mysql connected');
-})
 
 router.get('/', function(req, res, next) {
     res.send('API is working properly');

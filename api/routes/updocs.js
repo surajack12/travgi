@@ -2,6 +2,7 @@ var express = require('express');
 var Router = express.Router();
 var path = require('path')
 var multer = require('multer');
+
   // this is how image upload in node api
 
 
@@ -36,6 +37,7 @@ var multer = require('multer');
      console.log('APi call');
      res.send('Api call')
  })
+//  Router.listen(6000,()=>console.log('app listen on 6000'));
 
 
 module.exports = Router;
