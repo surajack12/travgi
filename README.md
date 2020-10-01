@@ -1,13 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
 In the project directory, you can run:
+ 
 
-### `npm start`
+### `travgi>npm install`
 
-Runs the app in the development mode.<br />
+And then
+
+### `travgi>npm start`
+
+
+
+only if you want to  run react app and backend to then use 
+
+
+### `travgi>npm run dev`
+
+
+Runs the app in the development mode and backend server starts.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+Don't forget to create `database` from `api/mysql.sql` and configure the [mysqlconn.js](api/mysqlconn.js) file
+
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
