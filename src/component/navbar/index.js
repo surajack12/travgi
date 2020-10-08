@@ -15,7 +15,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import { HomeRounded,SettingsApplicationsRounded,InboxRounded,NearMeRounded,ContactSupportRounded,ContactsRounded,VerifiedUserRounded} from '@material-ui/icons';
+import { SupervisedUserCircleRounded,HomeRounded,SettingsApplicationsRounded,InboxRounded,NearMeRounded,ContactSupportRounded,ContactsRounded,VerifiedUserRounded} from '@material-ui/icons';
 
 import { Button, Container} from '@material-ui/core'
 const drawerWidth = 240;
@@ -105,6 +105,7 @@ export default function PersistentDrawerLeft(props) {
               {icon:<ContactSupportRounded/>,href:'/support',text:'Support'},
               {icon:<ContactsRounded/>,href:'/contact',text:'Contact'},              
               {icon:<SettingsApplicationsRounded/>,href:'/setting',text:'Setting'},
+              {icon:<SupervisedUserCircleRounded/>,href:'/profile',text:'Profile'} 
               
  ]
 
@@ -129,7 +130,7 @@ export default function PersistentDrawerLeft(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Persistent drawer
+            ProjectIND
           </Typography>
         </Toolbar>
       </AppBar>
