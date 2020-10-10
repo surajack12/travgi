@@ -4,7 +4,7 @@ import App from './App';
 import Kyc from './component/kycform'
 import Navbar from './component/navbar'
 import 'bootstrap/dist/css/bootstrap.css';
-import Profile from './component/profile'
+import Profile from './component/profile/profile'
 import {BrowserRouter as Router,Route } from 'react-router-dom'
 
 const router =(
