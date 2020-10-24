@@ -1,20 +1,22 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {Grid,Typography,Paper,TextField,Button, CssBaseline,Box,Avatar,Badge,Container} from '@material-ui/core';
 import './profile.css';
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/ToolBar'
 import IconButton from '@material-ui/core/IconButton'
 import {ArrowBackIosRounded,CameraAltRounded,Edit} from '@material-ui/icons';
-import { makeStyles } from '@material-ui/core/styles';
+
 
  function profile(props){
-     let state={
-         edit:false,
-         name:'',
-         email:'',
-         phone:'',
-
-     }
+     
+   const state={
+       name:'',
+       email:'',
+       edit:'',
+       phone:''
+   }
+        
+     
 
     return(
         <div > 
@@ -52,13 +54,14 @@ import { makeStyles } from '@material-ui/core/styles';
                 <Container maxWidth="lg">
                 <Typography variant="h6">Profile detailes</Typography>
 
-                        <Button  size="small" variant="outlined" >
+                        <Button  size="small" variant="outlined"  >
                             <Edit  />Edit
                         </Button>
-                        <TextField size="small" className="TextField" value={state.name}  type="text" variant="outlined" placeholder="Name" />
-                        <TextField size="small" className="TextField" value={state.email}  type="email" variant="outlined" placeholder="Email" />
-                        <TextField size="small" className="TextField" value={state.phone}  type="tel" variant="outlined" placeholder="Phone" />
-                      <Button style={{background:'lightgreen',marginTop:'1rem'}}>Update</Button>
+
+                        <TextField size="small"  className="TextField" value={state.name} fullWidth  type="text" variant="outlined" placeholder="Name" />
+                        <TextField size="small" className="TextField" value={state.email} fullWidth  type="email" variant="outlined" placeholder="Email" />
+                        <TextField size="small" className="TextField" value={state.phone} fullWidth  type="tel" variant="outlined" placeholder="Phone" />
+                      <Button className="mt-2 text-white mb-2  bg-success" variant="outlined" fullWidth  > Update</Button>
                         
                    
                 </Container>
